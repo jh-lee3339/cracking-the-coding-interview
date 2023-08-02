@@ -12,6 +12,22 @@ package arraystring;
  */
 class _01_03_URLify {
     char[] urlify(char[] chars, int trueLength) {
-        throw new UnsupportedOperationException();
+        char[] sol = new char[trueLength];
+        int i = 0; // for initial string
+        int j = 0; // for sol array
+        while (i < chars.length && j < chars.length)  {
+            if (chars[i] != ' ') {
+                sol[j] = chars[i];
+            }
+            if (chars[i] == ' ') {
+                sol[j] = '%';
+                sol[j+1] = '2';
+                sol[j+2] = '0';
+                j++;
+            }
+            i++;
+            j++;
+        }
+        return sol;
     }
 }
